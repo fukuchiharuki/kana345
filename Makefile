@@ -1,25 +1,25 @@
-all: dist/kana3.json dist/kana4.json dist/kana5.json
+all: dist/kana3.shuf.json dist/kana4.shuf.json dist/kana5.shuf.json
 
-dist/kana3.json: dist/kana345.txt
+dist/kana3.shuf.json: dist/kana345.txt
 	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{3}$$' | \
 	shuf | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana3.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana3.shuf.json
 
-dist/kana4.json: dist/kana345.txt
+dist/kana4.shuf.json: dist/kana345.txt
 	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{4}$$' | \
 	shuf | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana4.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana4.shuf.json
 
-dist/kana5.json: dist/kana345.txt
+dist/kana5.shuf.json: dist/kana345.txt
 	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{5}$$' | \
 	shuf | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana5.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana5.shuf.json
 
 dist/kana345.txt: filtered.txt
 	mkdir -p dist
