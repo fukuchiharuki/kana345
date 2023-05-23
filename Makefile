@@ -1,29 +1,29 @@
-all: dist/kana3.json dist/kana4.json dist/kana5.json dist/timestamp
+all: docs/kana3.json docs/kana4.json docs/kana5.json docs/timestamp
 
-dist/kana3.json: dist/kana345.txt
-	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{3}$$' | \
+docs/kana3.json: docs/kana345.txt
+	cat docs/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{3}$$' | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana3.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > docs/kana3.json
 
-dist/kana4.json: dist/kana345.txt
-	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{4}$$' | \
+docs/kana4.json: docs/kana345.txt
+	cat docs/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{4}$$' | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana4.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > docs/kana4.json
 
-dist/kana5.json: dist/kana345.txt
-	cat dist/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{5}$$' | \
+docs/kana5.json: docs/kana345.txt
+	cat docs/kana345.txt | LC_COLLATE=C.UTF-8 grep -oE '^[ぁ-ゔー]{5}$$' | \
 	sed -e 's/^/"/g' | sed -e 's/$$/"/g' | \
 	sed -z 's/\n/,/g' | \
-	sed -e 's/^/[/' | sed -e 's/,$$/]/' > dist/kana5.json
+	sed -e 's/^/[/' | sed -e 's/,$$/]/' > docs/kana5.json
 
-dist/timestamp: dist/kana345.txt
-	date > dist/timestamp
+docs/timestamp: docs/kana345.txt
+	date > docs/timestamp
 
-dist/kana345.txt: filtered.txt
-	mkdir -p dist
-	cat filtered.txt > dist/kana345.txt
+docs/kana345.txt: filtered.txt
+	mkdir -p docs
+	cat filtered.txt > docs/kana345.txt
 
 filtered.txt: cleansed.txt exclusion.txt
 	cat cleansed.txt | grep -v -x -f exclusion.txt > filtered.txt
