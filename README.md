@@ -5,13 +5,13 @@ These data files have included material from the JMdict (EDICT, etc.) dictionary
 </p>
 
 <ul>
-	<li><a href="https://flickwords.github.io/dictionaries/kana345.txt">kana345.txt</a> - Extracted 3 to 5 letter kana list from JMdict_e</li>
+	<li><a href="https://fukuchiharuki.me/kana345/kana345.txt">kana345.txt</a> - Extracted 3 to 5 letter kana list from JMdict_e</li>
 </ul>
 
 <ul>
-	<li><a href="https://flickwords.github.io/dictionaries/kana3.json">kana3.json</a> - Extracted 3 letter kana list from kana345.txt, and converted into string array</li>
-	<li><a href="https://flickwords.github.io/dictionaries/kana4.json">kana4.json</a> - Extracted 4 letter kana list from kana345.txt, and converted into string array</li>
-	<li><a href="https://flickwords.github.io/dictionaries/kana5.json">kana5.json</a> - Extracted 5 letter kana list from kana345.txt, and converted into string array</li>
+	<li><a href="https://fukuchiharuki.me/kana345/kana3.json">kana3.json</a> - Extracted 3 letter kana list from kana345.txt, and converted into string array</li>
+	<li><a href="https://fukuchiharuki.me/kana345/kana4.json">kana4.json</a> - Extracted 4 letter kana list from kana345.txt, and converted into string array</li>
+	<li><a href="https://fukuchiharuki.me/kana345/kana5.json">kana5.json</a> - Extracted 5 letter kana list from kana345.txt, and converted into string array</li>
 </ul>
 
 <p>
